@@ -211,6 +211,9 @@ MongooseMoney.prototype.castForQuery = function($conditional, val) {
 if (!mongoose.Schema.Types.Money) {
     mongoose.Schema.Types.Money = MongooseMoney;
 }
+if (!mongoose.Types.Money) {
+    mongoose.Types.Money = MongooseMoney;
+}
 
 /**
  * @description export javascript Money

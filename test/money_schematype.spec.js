@@ -28,6 +28,7 @@ describe('Money Schema Type', function() {
 
     it('should be loaded into Schema Types', function(done) {
         expect(mongoose.Schema.Types.Money).to.exist;
+        expect(mongoose.Types.Money).to.exist;
         done();
     });
 
