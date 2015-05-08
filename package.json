@@ -1,0 +1,60 @@
+{
+    "name": "mongoose-money",
+    "version": "0.1.0",
+    "description": "Money schema type for mongoose",
+    "keywords": [
+        "mongoose",
+        "mongoose-plugin",
+        "money",
+        "currency",
+        "schematype",
+        "coin",
+        "exchange"
+    ],
+    "main": "index.js",
+    "scripts": {
+        "test": "grunt test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lykmapipo/mongoose-money.git"
+    },
+    "author": {
+        "name": "lykmapipo",
+        "email": "lallyelias87@gmail.com",
+        "url": "https://github.com/lykmapipo"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/lykmapipo/mongoose-money/issues"
+    },
+    "homepage": "https://github.com/lykmapipo/mongoose-money",
+    "contributors": [{
+        "name": "lykmapipo",
+        "github": "https://github.com/lykmapipo"
+    }],
+    "devDependencies": {
+        "async": "^0.9.0",
+        "chai": "^2.2.0",
+        "faker": "^2.1.2",
+        "grunt": "^0.4.5",
+        "grunt-contrib-jshint": "^0.11.2",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-mocha-test": "^0.12.7",
+        "jshint-stylish": "^1.0.1",
+        "lodash": "^3.7.0",
+        "mocha": "^2.2.4",
+        "mongoose": "^4.0.2"
+    },
+    "dependencies": {
+        "big.js": "^3.0.1",
+        "country-data": "0.0.19",
+        "inflection": "^1.7.0",
+        "money": "^0.2.0",
+        "oxr": "^1.0.1"
+    },
+    "peerDependencies": {
+        "lodash": "^3.7.0",
+        "mongoose": "^4.0.2"
+    }
+}
