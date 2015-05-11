@@ -2,7 +2,7 @@
 
 //dependencies
 var path = require('path');
-var Money = require(path.join(__dirname, 'lib', 'money'));
+var Money = require('moneyjs');
 var mongoose = require('mongoose');
 var SchemaType = mongoose.SchemaType;
 var errorMessages = mongoose.Error.messages;
@@ -169,12 +169,13 @@ MongooseMoney.prototype.cast = function(value /*,doc , init*/ ) {
 /*!
  * ignore
  */
-
 function handleSingle(val) {
     /*jshint validthis:true*/
     return this.cast(val);
 }
 
+
+//query conditions that are supported for money schema types
 MongooseMoney.prototype.$conditionalHandlers = {
     '$gt': handleSingle,
     '$gte': handleSingle,
@@ -182,6 +183,7 @@ MongooseMoney.prototype.$conditionalHandlers = {
     '$lte': handleSingle,
     '$ne': handleSingle
 };
+
 
 /**
  * Casts contents for queries.
@@ -214,6 +216,7 @@ if (!mongoose.Schema.Types.Money) {
 if (!mongoose.Types.Money) {
     mongoose.Types.Money = MongooseMoney;
 }
+
 
 /**
  * @description export javascript Money
