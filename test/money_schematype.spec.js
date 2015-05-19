@@ -4,9 +4,10 @@
 var path = require('path');
 var expect = require('chai').expect;
 var mongoose = require('mongoose');
+var Money = require('moneyjs');
 
-//import money schema
-var Money = require(path.join(__dirname, '..', 'index'));
+require(path.join(__dirname, '..', 'index'));
+
 var Schema = mongoose.Schema;
 var Product;
 

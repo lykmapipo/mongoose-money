@@ -5,12 +5,13 @@ var path = require('path');
 var _ = require('lodash');
 var async = require('async');
 var expect = require('chai').expect;
+var Money = require('moneyjs');
 var mongoose = require('mongoose');
+
+require(path.join(__dirname, '..', 'index'));
+
 var Schema = mongoose.Schema;
 var Product;
-
-//import money schema
-var Money = require(path.join(__dirname, '..', 'index'));
 
 //prepare fake prices
 var prices = [

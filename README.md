@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/lykmapipo/mongoose-money.svg?branch=master)](https://travis-ci.org/lykmapipo/mongoose-money)
 
-Money schema type for [mongoose](https://github.com/Automattic/mongoose).
+Money schema type for [mongoose](https://github.com/Automattic/mongoose) based on [MoneyJS](https://github.com/lykmapipo/MoneyJS).
 
 ## Installation
 ```sh
@@ -13,13 +13,28 @@ $ npm install --save mongoose-money
 You will have to require `mongoose-money` before define any mongoose schema to allow it to patch mongoose `Schema.Types` to add `Money` schema type.
 
 ```js
-//in the first call of mongoose
-//require mongoose-money too
 var mongoose = require('mongoose');
 require('mongoose-money');
+var Schema = mongoose.Schema;
+var Money = require('moneyjs');
+
+//define a schema that use money schema type
+var ProductSchema = new Schema({
+            price: {
+                type: Schema.Types.Money,
+                required: true,
+                index: true
+            }
+        });
+mongoose.model('Product',ProductSchema);
+    ...
+
+var book = new Product({
+    price: new Money(12, Money.USD)
+});
+
 ...
-//continue with schema definition
-...
+
 ```
 
 

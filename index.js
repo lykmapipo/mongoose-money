@@ -213,13 +213,8 @@ MongooseMoney.prototype.castForQuery = function($conditional, val) {
 if (!mongoose.Schema.Types.Money) {
     mongoose.Schema.Types.Money = MongooseMoney;
 }
+
+//extend mongoose schema types with money type
 if (!mongoose.Types.Money) {
     mongoose.Types.Money = MongooseMoney;
 }
-
-
-/**
- * @description export javascript Money
- * @type {Money}
- */
-module.exports = exports = Money;

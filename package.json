@@ -9,7 +9,10 @@
         "currency",
         "schematype",
         "coin",
-        "exchange"
+        "exchange",
+        "monetary",
+        "convert",
+        "amount"
     ],
     "main": "index.js",
     "scripts": {
@@ -44,13 +47,13 @@
         "jshint-stylish": "^1.0.1",
         "lodash": "^3.7.0",
         "mocha": "^2.2.4",
-        "mongoose": "^4.0.2",
-        "moneyjs": "^0.1.0"
+        "moneyjs": "^0.2.0",
+        "mongoose": "^4.0.2"
     },
     "peerDependencies": {
         "async": "^0.9.0",
         "lodash": "^3.7.0",
-        "mongoose": "^4.0.2",
-        "moneyjs": "^0.1.0"
+        "moneyjs": "^0.2.0",
+        "mongoose": "^4.0.2"
     }
 }
