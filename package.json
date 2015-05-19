@@ -48,12 +48,12 @@
         "lodash": "^3.7.0",
         "mocha": "^2.2.4",
         "moneyjs": "^0.2.0",
-        "mongoose": "^4.0.2"
+        "mongoose": "^4.0.3"
     },
     "peerDependencies": {
         "async": "^0.9.0",
         "lodash": "^3.7.0",
         "moneyjs": "^0.2.0",
-        "mongoose": "^4.0.2"
+        "mongoose": "^4.0.3"
     }
 }

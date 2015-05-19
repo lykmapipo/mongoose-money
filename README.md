@@ -1,4 +1,4 @@
-# mongoose-money(WIP)
+# mongoose-money
 
 [![Build Status](https://travis-ci.org/lykmapipo/mongoose-money.svg?branch=master)](https://travis-ci.org/lykmapipo/mongoose-money)
 
@@ -39,6 +39,8 @@ book.save(done);
 ...
 
 ```
+
+*Note: All [MoneyJS](https://github.com/lykmapipo/MoneyJS) are applicable to money fields*
 
 
 ## Testing
