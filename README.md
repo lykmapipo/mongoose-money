@@ -40,7 +40,7 @@ book.save(done);
 
 ```
 
-*Note: All [MoneyJS](https://github.com/lykmapipo/MoneyJS) are applicable to money fields*
+*Note: All [MoneyJS](https://github.com/lykmapipo/MoneyJS) operations are applicable to money fields*
 
 
 ## Testing
