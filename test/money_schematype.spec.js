@@ -19,8 +19,7 @@ describe('Money Schema Type', function() {
         var ProductSchema = new Schema({
             price: {
                 type: Schema.Types.Money,
-                required: true,
-                index: true
+                required: true
             }
         });
         Product = mongoose.model('Product', ProductSchema);
@@ -45,7 +44,7 @@ describe('Money Schema Type', function() {
         done();
     });
 
-    it('should be able to index it', function(done) {
+    it('should be auto indexed', function(done) {
         var ProductSchema = new Schema({
             price: {
                 type: Schema.Types.Money,

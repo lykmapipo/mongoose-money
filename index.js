@@ -209,6 +209,10 @@ MongooseMoney.prototype.castForQuery = function($conditional, val) {
 };
 
 
+//------------------------------------------------------------------------------
+// Attach Types
+//------------------------------------------------------------------------------
+
 //extend mongoose schema types with money type
 if (!mongoose.Schema.Types.Money) {
     mongoose.Schema.Types.Money = MongooseMoney;
@@ -218,3 +222,19 @@ if (!mongoose.Schema.Types.Money) {
 if (!mongoose.Types.Money) {
     mongoose.Types.Money = MongooseMoney;
 }
+
+
+//------------------------------------------------------------------------------
+// Plugins
+//------------------------------------------------------------------------------
+
+//auto index Money fields
+mongoose.plugin(function(schema) {
+    //iterate over schema paths
+    schema.eachPath(function(pathName, schemaType) {
+        //add index to money fields
+        if (schemaType.instance) {
+            schemaType.options.index = true;
+        }
+    });
+});

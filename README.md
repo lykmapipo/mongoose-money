@@ -26,12 +26,15 @@ var ProductSchema = new Schema({
                 index: true
             }
         });
+
+//register model
 mongoose.model('Product',ProductSchema);
-    ...
 
 var book = new Product({
     price: new Money(12, Money.USD)
 });
+
+book.save(done);
 
 ...
 
