@@ -6,7 +6,7 @@ Money schema type for [mongoose](https://github.com/Automattic/mongoose) based o
 
 ## Installation
 ```sh
-$ npm install --save mongoose-money
+$ npm install --save async lodash mongoose-money
 ```
 
 ## Usage
