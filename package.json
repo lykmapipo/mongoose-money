@@ -1,6 +1,6 @@
 {
     "name": "mongoose-money",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Money schema type for mongoose",
     "keywords": [
         "mongoose",
@@ -47,10 +47,9 @@
         "jshint-stylish": "^1.0.1",
         "lodash": "^3.7.0",
         "mocha": "^2.2.4",
-        "mongoose": "^4.0.3"
+        "mongoose": "^4.1.10"
     },
     "dependencies": {
-        "moneyjs": "^0.2.1",
-        "mongoose": "^4.1.10"
+        "moneyjs": "^0.2.1"
     }
 }

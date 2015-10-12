@@ -233,7 +233,7 @@ mongoose.plugin(function(schema) {
     //iterate over schema paths
     schema.eachPath(function(pathName, schemaType) {
         //add index to money fields
-        if (schemaType.instance) {
+        if (schemaType.instance === 'Money') {
             schemaType.options.index = true;
         }
     });
