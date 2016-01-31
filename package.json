@@ -1,6 +1,6 @@
 {
     "name": "mongoose-money",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Money schema type for mongoose",
     "keywords": [
         "mongoose",
