@@ -59,6 +59,9 @@ $ npm test
 ## Contribute
 It will be nice, if you open an issue first so that we can know what is going on, then, fork this repo and push in your ideas. Do not forget to add a bit of test(s) of what value you adding.
 
+## References
+- [Indexes on Embedded Documents](https://docs.mongodb.org/manual/core/index-single/#indexes-on-embedded-documents)
+
 ## Licence
 The MIT License (MIT)
 

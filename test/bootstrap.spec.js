@@ -3,6 +3,7 @@
 //dependencies
 var async = require('async');
 var mongoose = require('mongoose');
+// mongoose.set('debug', true);
 
 before(function(done) {
     //setup database
