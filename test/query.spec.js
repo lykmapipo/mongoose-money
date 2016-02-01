@@ -31,60 +31,65 @@ describe('Money Schema Type Queries', function() {
                 type: Schema.Types.Money,
                 required: true,
                 index: true
+            },
+            tax: {
+                type: Schema.Types.Money,
+                default: Money.ZERO
             }
         });
         Product = mongoose.model('Product_', ProductSchema);
 
         async
-            .parallel({
-                '0': function(next) {
-                    new Product({
-                        price: prices[0]
-                    }).save(next);
-                },
-                '1': function(next) {
-                    new Product({
-                        price: prices[1]
-                    }).save(next);
-                },
-                '2': function(next) {
-                    new Product({
-                        price: prices[2]
-                    }).save(next);
-                },
-                '3': function(next) {
-                    new Product({
-                        price: prices[3]
-                    }).save(next);
-                },
-                '4': function(next) {
-                    new Product({
-                        price: prices[4]
-                    }).save(next);
-                }
-            }, done);
+        .parallel({
+            '0': function(next) {
+                new Product({
+                    price: prices[0],
+                    tax: new Money(5)
+                }).save(next);
+            },
+            '1': function(next) {
+                new Product({
+                    price: prices[1]
+                }).save(next);
+            },
+            '2': function(next) {
+                new Product({
+                    price: prices[2]
+                }).save(next);
+            },
+            '3': function(next) {
+                new Product({
+                    price: prices[3]
+                }).save(next);
+            },
+            '4': function(next) {
+                new Product({
+                    price: prices[4]
+                }).save(next);
+            }
+        }, done);
     });
 
     it('should be able to save money instance', function(done) {
         var price = new Money(7775.55555, Money.USD);
 
         async
-            .waterfall([
-                function(next) {
-                    Product.create({
-                        price: price
-                    }, next);
-                },
-                function(product, next) {
-                    expect(product.price.isEqualTo(price)).to.be.true;
-                    next(null, product);
-                },
-                function(product, next) {
-                    product.remove(next);
-                }
-            ], function(error, result) {
-                done(error, result);
-            });
+        .waterfall([
+            function(next) {
+                Product.create({
+                    price: price
+                }, next);
+            },
+            function(product, next) {
+                expect(product.price.isEqualTo(price)).to.be.true;
+                next(null, product);
+            },
+            function(product, next) {
+                product.remove(next);
+            }
+        ], function(error, result) {
+            done(error, result);
+        });
     });
 
     it('should be able to use money instance in `eq` query', function(done) {
