@@ -20,6 +20,9 @@ describe('Money Schema Type', function() {
             price: {
                 type: Schema.Types.Money,
                 required: true
+            },
+            tax: {
+                type: Schema.Types.Money
             }
         });
         Product = mongoose.model('Product', ProductSchema);
@@ -49,6 +52,9 @@ describe('Money Schema Type', function() {
             price: {
                 type: Schema.Types.Money,
                 index: true
+            },
+            tax: {
+                type: Schema.Types.Money
             }
         });
 
@@ -63,6 +69,9 @@ describe('Money Schema Type', function() {
                 type: Schema.Types.Money,
                 index: true,
                 default: new Money(12, Money.USD)
+            },
+            tax: {
+                type: Schema.Types.Money
             }
         });
         var Car = mongoose.model('Car', CarSchema);
@@ -160,6 +169,9 @@ describe('Money Schema Type', function() {
                 required: true,
                 index: true,
                 max: new Money(4000, Money.USD)
+            },
+            tax: {
+                type: Schema.Types.Money
             }
         });
         var Software = mongoose.model('Software', SoftwareSchema);
