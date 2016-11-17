@@ -24,7 +24,7 @@ function MongooseMoney(path, options) {
 }
 
 /**
- * @description specifies schema type's name, to defend against 
+ * @description specifies schema type's name, to defend against
  *              minifiers that mangle function names.
  * @api private
  */
@@ -58,11 +58,11 @@ MongooseMoney.prototype.checkRequired = function checkRequired(value) {
  * @see Customized Error Messages #error_messages_MongooseError-messages
  * @api public
  */
-MongooseMoney.prototype.min = function(value, message) {
+MongooseMoney.prototype.min = function (value, message) {
     // var self = this;
 
     if (this.minValidator) {
-        this.validators = this.validators.filter(function(v) {
+        this.validators = this.validators.filter(function (v) {
             return v.validator !== this.minValidator;
         }, this);
     }
@@ -71,7 +71,7 @@ MongooseMoney.prototype.min = function(value, message) {
         var msg = message || errorMessages.Number.min;
         msg = msg.replace(/{MIN}/, value);
 
-        this.minValidator = function(v) {
+        this.minValidator = function (v) {
             return v !== null && v.isGreaterThan(value);
         };
 
@@ -95,9 +95,9 @@ MongooseMoney.prototype.min = function(value, message) {
  * @see Customized Error Messages #error_messages_MongooseError-messages
  * @api public
  */
-MongooseMoney.prototype.max = function(value, message) {
+MongooseMoney.prototype.max = function (value, message) {
     if (this.maxValidator) {
-        this.validators = this.validators.filter(function(v) {
+        this.validators = this.validators.filter(function (v) {
             return v.validator !== this.maxValidator;
         }, this);
     }
@@ -106,7 +106,7 @@ MongooseMoney.prototype.max = function(value, message) {
         var msg = message || errorMessages.Number.max;
         msg = msg.replace(/{MAX}/, value);
 
-        this.maxValidator = function(v) {
+        this.maxValidator = function (v) {
             return v !== null && v.isLessThan(value);
         };
 
@@ -128,9 +128,9 @@ MongooseMoney.prototype.max = function(value, message) {
  * @param {Document} doc document that triggers the casting
  * @param {Boolean} [init]
  */
-MongooseMoney.prototype.cast = function(value /*,doc , init*/ ) {
+MongooseMoney.prototype.cast = function (value /*,doc , init*/) {
     //TODO make use of base currency to cast value to
-    //money    
+    //money
     // console.log(value);
     if (null === value) {
         return value;
@@ -144,7 +144,7 @@ MongooseMoney.prototype.cast = function(value /*,doc , init*/ ) {
         return value;
     }
 
-    if (value && value.amount && value.currency) {
+    if (value && value.amount !== undefined && value.currency) {
         if (value.time && value.time instanceof Date) {
             return new Money(
                 value.amount,
@@ -192,7 +192,7 @@ MongooseMoney.prototype.$conditionalHandlers = {
  * @param {any} [value] value to be casted for query
  * @api private
  */
-MongooseMoney.prototype.castForQuery = function($conditional, val) {
+MongooseMoney.prototype.castForQuery = function ($conditional, val) {
     if (arguments.length === 2) {
         var handler = this.$conditionalHandlers[$conditional];
 
@@ -229,9 +229,9 @@ if (!mongoose.Types.Money) {
 //------------------------------------------------------------------------------
 
 //auto index Money fields
-mongoose.plugin(function(schema) {
+mongoose.plugin(function (schema) {
     //iterate over schema paths
-    schema.eachPath(function(pathName, schemaType) {
+    schema.eachPath(function (pathName, schemaType) {
         //add index to money fields
         if (schemaType.instance === 'Money') {
             schemaType.options.index = true;
